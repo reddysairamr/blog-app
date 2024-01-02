@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog App</title>
+</head>
+<body>
+    <h1>Welcome to the Blog App!</h1>
+    <% if ( blogs.length == 0) { %>
+     <h3>No blogs to display. Create One! </h3>
+     <a href="/create-blog" type="button">Create a new blog</a>
+    <% } else { %>
+        <ul>
+            <% for( let index = 0; index < blogs.length; index++ ) { %>
+                <li><a href="/open-blog/<%= blogs[index].id %>" ><%= blogs[index].title %></a></li>
+            <% } %>
+        </ul>
+        <a href="/create-blog" type="button">Create a new blog</a>
+    <% } %>
+
+     
+</body>
+</html>
